@@ -115,7 +115,7 @@ const Sections = {
         row.className = "h-row";
         row.innerHTML =
           "<div><b>" + it.hypothesis + "</b><br><span class='muted'>решение: " + winner.title + "</span></div>" +
-          "<div class='h-metric'>" + out.value + "%</div>";
+          "<div class='h-metric'>" + (out.show || out.value + "%") + "</div>";
         c.appendChild(row);
       });
     } else {
