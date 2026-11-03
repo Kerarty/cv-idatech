@@ -5,7 +5,7 @@
    ============================================================ */
 
 Games.register("logic", {
-  icon: "🧩",
+  icon: "logic",
   title: "Логика",
   bg: "linear-gradient(135deg,#d8f3e8,#d6e6ff)",
   note: "Классическая головоломка с вариантами — как в мини-играх Clever. Неверный ответ дешёвый: подсветка без штрафа. Проекты раскрываются по одному — chunking вместо длинной страницы.",
@@ -35,7 +35,7 @@ Games.register("logic", {
     let idx = 0;
 
     body.innerHTML =
-      '<div class="game-intro"><div class="big">🧩</div>' +
+      '<div class="game-intro"><div class="big">' + Icons.svg("logic", 46) + "</div>" +
       "<h2>Три загадки</h2>" +
       "<p>Каждая разгадка открывает проект из архива. Ошибаться не страшно — это тоже гипотеза.</p>" +
       '<button class="btn-start">Начать</button></div>';

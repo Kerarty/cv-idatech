@@ -6,7 +6,7 @@
    ============================================================ */
 
 Games.register("reaction", {
-  icon: "⚡",
+  icon: "reaction",
   title: "Реакция",
   bg: "linear-gradient(135deg,#fff1d6,#ffe0e0)",
   note: "Чистый hyper-casual: один тап, ноль обучения. Кривая обратная к скорости — первое попадание гарантированно, дальше азарт. Промах без штрафа: фрустрация убивает путь к контенту быстрее, чем сложность.",
@@ -15,7 +15,7 @@ Games.register("reaction", {
     const HITS_TO_WIN = 5;
 
     body.innerHTML =
-      '<div class="game-intro"><div class="big">⚡</div>' +
+      '<div class="game-intro"><div class="big">' + Icons.svg("reaction", 46) + "</div>" +
       "<h2>Один тап</h2>" +
       "<p>Тапай (или жми пробел), когда маркер в зелёной зоне. Пять попаданий — и показатели навыков твои.</p>" +
       '<button class="btn-start">Погнали</button></div>' +
@@ -23,7 +23,7 @@ Games.register("reaction", {
         '<div class="react-zone"></div>' +
         '<div class="react-marker"></div>' +
       "</div>" +
-      '<div class="react-stats" hidden><span class="hits">🎯 0</span><span class="miss">💨 0</span></div>' +
+      '<div class="react-stats" hidden><span class="hits">попаданий 0</span><span class="miss">мимо 0</span></div>' +
       '<div class="react-msg"></div>';
 
     const track = body.querySelector(".react-track");
@@ -84,7 +84,7 @@ Games.register("reaction", {
       if (!running) return;
       if (inZone()) {
         hits++;
-        hitsEl.textContent = "🎯 " + hits;
+        hitsEl.textContent = "попаданий " + hits;
         msg.textContent = ["Есть!", "Чётко!", "В яблочко!", "Реакция топ!", "Последний — хлёсткий!"][hits - 1] || "Есть!";
         if (hits >= HITS_TO_WIN) return finish();
         // сужаем зону и ускоряемся — прогрессия сложности
@@ -94,7 +94,7 @@ Games.register("reaction", {
         layoutZone();
       } else {
         misses++;
-        missEl.textContent = "💨 " + misses;
+        missEl.textContent = "мимо " + misses;
         msg.textContent = "Мимо — счёт на месте, бей дальше";
       }
     }

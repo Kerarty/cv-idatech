@@ -8,7 +8,7 @@
 window.ABLAB_RESULTS = [];
 
 Games.register("ablab", {
-  icon: "🧪",
+  icon: "ablab",
   title: "A/B Lab",
   bg: "linear-gradient(135deg,#e0fbf0,#e4e0ff)",
   note: "Ядро геймплея — рутина из бенефитов вакансии: гипотезы, A/B, метрики. Оба варианта «работают», метрики смоделированы и подписаны как симуляция — честность важнее эффекта. Выбор HR реально меняет график.",
@@ -18,7 +18,7 @@ Games.register("ablab", {
     let idx = 0;
 
     body.innerHTML =
-      '<div class="game-intro"><div class="big">🧪</div>' +
+      '<div class="game-intro"><div class="big">' + Icons.svg("ablab", 46) + "</div>" +
       "<h2>A/B-лаборатория</h2>" +
       "<p>Три гипотезы, шесть вариантов. Твоё решение — метрика на графике. Так я работаю с каждой механикой.</p>" +
       '<button class="btn-start">Запустить итерацию 1</button></div>';
@@ -58,7 +58,7 @@ Games.register("ablab", {
           '<div class="m-bar"><div class="m-fill" data-w="' + out.value + '"></div></div>' +
         "</div>" +
         '<div class="ab-conclusion">' + out.conclusion + "</div>" +
-        '<div class="ab-fact">💡 ' + it.fact + "</div>" +
+        '<div class="ab-fact"><b>Из практики.</b> ' + it.fact + "</div>" +
         '<div class="ab-note">' + cfg.disclaimer + "</div>" +
         '<button class="btn-start">' + (idx + 1 < cfg.iterations.length ? "Итерация " + (idx + 2) : "Собрать сводку") + "</button>";
 

@@ -14,19 +14,19 @@ const DATA = {
 
   contacts: [
     {
-      icon: "🐙",
+      icon: "branch",
       label: "GitHub — проекты и код",
       value: "github.com/Kerarty",
       href: "https://github.com/Kerarty",
     },
     {
-      icon: "📱",
+      icon: "code",
       label: "Это резюме (исходники)",
       value: "github.com/Kerarty/cv-idatech",
       href: "https://github.com/Kerarty/cv-idatech",
     },
     {
-      icon: "✉️",
+      icon: "plane",
       label: "Telegram",
       value: "@Kerarty",
       href: "https://t.me/Kerarty",
@@ -65,7 +65,8 @@ const DATA = {
   /* --- 🧩 Логика → Проекты --- */
   projects: [
     {
-      icon: "🌀",
+      mono: "e",
+      tint: "var(--tile-sage)",
       name: "echoloop",
       sub: "Unity 6 + URP · C#",
       text: "Головоломка о времени: твои прошлые проходы — эхо в петле. 8 уровней с нарастающей сложностью.",
@@ -73,7 +74,8 @@ const DATA = {
       href: "https://github.com/Kerarty/echoloop-playble",
     },
     {
-      icon: "🏃",
+      mono: "m",
+      tint: "var(--tile-clay)",
       name: "playable-ad-mob-rush",
       sub: "PixiJS · один HTML-файл",
       text: "Crowd runner: вся игра в одном файле 472 КБ. Процедурный арт и звук, поддержка MRAID.",
@@ -81,7 +83,8 @@ const DATA = {
       href: "https://github.com/Kerarty/playable-ad-mob-rush",
     },
     {
-      icon: "🧰",
+      mono: "s",
+      tint: "var(--tile-sky)",
       name: "playble-ads — SDK",
       sub: "TypeScript · движко-независимый",
       text: "SDK для HTML5 playable-рекламы с адаптерами под основные рекламные сети: один билд — везде.",
@@ -89,7 +92,8 @@ const DATA = {
       href: "https://github.com/Kerarty/playble-ads",
     },
     {
-      icon: "🐱",
+      mono: "k",
+      tint: "var(--tile-blush)",
       name: "Splash Kitty!",
       sub: "PixiJS · playable-креатив",
       text: "Нарисуй линию и направь капли дождя в кота-стакана. Один HTML5-файл.",
@@ -97,7 +101,8 @@ const DATA = {
       href: "https://github.com/Kerarty/splash-kitty-playable-ad",
     },
     {
-      icon: "🎮",
+      mono: "cv",
+      tint: "var(--tile-sand)",
       name: "cv-* — 12 играбельных резюме",
       sub: "ванильный JS · конвейер",
       text: "Под каждую студию — свой жанр: босс-файт для Highcore, смена в пункте выдачи для Playstrom, баланс-лаборатория merge-автобатлера для Top Games.",
@@ -152,27 +157,27 @@ const DATA = {
   /* --- 🌤 Прогноз → О себе --- */
   forecast: [
     {
-      icon: "☀️",
+      icon: "sun",
       title: "Сегодня ясно. Гипотезы сходятся.",
       text: "Предпочитаю сделать прототип вместо того, чтобы спорить о нём.",
     },
     {
-      icon: "🌬",
+      icon: "wind",
       title: "Ветер перемен: 12 прототипов в месяц.",
       text: "Если идея сомнительна — дешевле проверить, чем доказать.",
     },
     {
-      icon: "💧",
+      icon: "drop",
       title: "Влажность: 0% бюрократии.",
       text: "Работаю напрямую с разработкой, артом и аналитикой.",
     },
     {
-      icon: "🌡",
+      icon: "thermo",
       title: "Дедлайн-индекс: высокий. Переношу комфортно.",
       text: "Hyper-casual — это много маленьких дедлайнов вместо одного большого.",
     },
     {
-      icon: "🌈",
+      icon: "rainbow",
       title: "На неделю: Unity, HTML5, баланс.",
       text: "И одна головоломка про петли времени — зашла слишком сильно, чтобы бросить.",
     },

@@ -6,7 +6,7 @@
    ============================================================ */
 
 Games.register("memory", {
-  icon: "💭",
+  icon: "memory",
   title: "Память",
   bg: "linear-gradient(135deg,#e4e0ff,#d6e6ff)",
   note: "Кривая сложности линейная: +2 тайла и −0,5 с за раунд. Проиграть нельзя — неверный тап мягко повторяет показ. Это демонстрация difficulty progression из вакансии, а не челлендж: HR должен дойти до контента relaxed-путём.",
@@ -23,7 +23,7 @@ Games.register("memory", {
     let locked = true;
 
     body.innerHTML =
-      '<div class="game-intro"><div class="big">💭</div>' +
+      '<div class="game-intro"><div class="big">' + Icons.svg("memory", 46) + "</div>" +
       "<h2>Тренировка памяти</h2>" +
       "<p>Тайлы вспыхивают последовательностью — повтори её. Три раунда, сложность растёт. Каждый раунд открывает период опыта.</p>" +
       '<button class="btn-start">Начать</button></div>' +

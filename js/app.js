@@ -23,6 +23,10 @@ const App = {
     document.querySelector(".profile-name").textContent = DATA.meta.name;
     document.querySelector(".profile-role").textContent = DATA.meta.role;
     document.querySelector(".profile-note").textContent = DATA.meta.status;
+    document.querySelector(".battery-icon").innerHTML = Icons.svg("battery", 17);
+    document.getElementById("game-back").innerHTML = Icons.svg("back", 20);
+    document.getElementById("section-back").innerHTML = Icons.svg("back", 20);
+    document.getElementById("game-inspect").innerHTML = Icons.svg("info", 19);
   },
 
   startClock() {
@@ -46,15 +50,15 @@ const App = {
 
     // статичные приложения без игры
     const statics = [
-      { id: "forecast", icon: "🌤", title: "Прогноз", bg: "linear-gradient(135deg,#dff0ff,#e7e2ff)" },
-      { id: "contacts", icon: "📞", title: "Контакты", bg: "linear-gradient(135deg,#e6fbef,#dff0ff)" },
+      { id: "forecast", icon: "forecast", title: "Прогноз", bg: "var(--tile-sky)" },
+      { id: "contacts", icon: "contacts", title: "Контакты", bg: "var(--tile-sage)" },
     ];
     statics.forEach((a) => apps.appendChild(this.appButton(a.id, a.icon, a.title, a.bg)));
 
     // док: итоги
     const dock = document.getElementById("dock");
     dock.innerHTML = "";
-    dock.appendChild(this.appButton("summary", "🏆", "Итоги", "linear-gradient(135deg,#fff3d6,#ffe9c2)"));
+    dock.appendChild(this.appButton("summary", "trophy", "Итоги", "var(--tile-sand)"));
 
     this.refreshBadges();
   },
@@ -64,9 +68,9 @@ const App = {
     b.className = "app";
     b.dataset.app = id;
     b.innerHTML =
-      '<span class="app-icon" style="--app-bg:' + (bg || "") + '">' + icon + "</span>" +
+      '<span class="app-icon" style="--app-bg:' + (bg || "var(--tile-sand)") + '">' + Icons.svg(icon, 26) + "</span>" +
       '<span class="app-label">' + title + "</span>" +
-      '<span class="app-badge">✓</span>';
+      '<span class="app-badge" aria-label="пройдено"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg></span>';
     b.addEventListener("click", () => this.openApp(id));
     return b;
   },
@@ -123,6 +127,8 @@ const App = {
 
     const body = document.getElementById("game-body");
     body.innerHTML = "";
+    // слой раздела в DOM позже слоя игры — без закрытия игра откроется под ним
+    document.getElementById("scr-section").classList.remove("open");
     document.getElementById("scr-game").classList.add("open");
 
     game.start(body, () => {

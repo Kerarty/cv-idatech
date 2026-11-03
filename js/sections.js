@@ -61,7 +61,7 @@ const Sections = {
       const c = document.createElement("div");
       c.className = "card proj";
       c.innerHTML =
-        '<div class="proj-icon">' + p.icon + "</div>" +
+        '<div class="proj-icon" style="background:' + (p.tint || "var(--tile-sand)") + '">' + p.mono + "</div>" +
         "<div>" +
           "<h3>" + p.name + "</h3>" +
           '<div class="card-sub">' + p.sub + "</div>" +
@@ -141,7 +141,7 @@ const Sections = {
       const c = document.createElement("div");
       c.className = "card fc";
       c.innerHTML =
-        '<div class="fc-icon">' + f.icon + "</div>" +
+        '<div class="fc-icon">' + Icons.svg(f.icon, 22) + "</div>" +
         "<div><div class='fc-title'>" + f.title + "</div><div class='fc-text'>" + f.text + "</div></div>";
       root.appendChild(c);
     });
@@ -158,7 +158,7 @@ const Sections = {
       a.target = "_blank";
       a.rel = "noopener";
       a.innerHTML =
-        '<div class="contact-icon">' + ct.icon + "</div>" +
+        '<div class="contact-icon">' + Icons.svg(ct.icon, 20) + "</div>" +
         "<div><div class='contact-label'>" + ct.label + "</div><div class='contact-value'>" + ct.value + "</div></div>";
       root.appendChild(a);
     });
