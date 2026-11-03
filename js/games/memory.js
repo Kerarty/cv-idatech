@@ -35,6 +35,8 @@ Games.register("memory", {
     body.querySelector(".btn-start").addEventListener("click", startRound);
 
     function startRound() {
+      const intro = body.querySelector(".game-intro");
+      if (intro) intro.style.display = "none";
       const r = rounds[round];
       seq = [];
       input = [];

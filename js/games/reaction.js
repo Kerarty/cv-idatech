@@ -50,6 +50,7 @@ Games.register("reaction", {
     document.addEventListener("keydown", spaceTap);
 
     function start() {
+      body.querySelector(".game-intro").style.display = "none";
       track.hidden = false;
       stats.hidden = false;
       layoutZone();
