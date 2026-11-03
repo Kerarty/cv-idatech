@@ -14,6 +14,18 @@ const DATA = {
 
   contacts: [
     {
+      icon: "mail",
+      label: "Почта — самый быстрый ответ",
+      value: "kukar.yar@gmail.com",
+      href: "mailto:kukar.yar@gmail.com?subject=Вакансия Game Designer (Casual/Hyper Casual), IDA TECH",
+    },
+    {
+      icon: "contacts",
+      label: "Телефон / мессенджеры",
+      value: "+375 44 783 84 89",
+      href: "tel:+375447838489",
+    },
+    {
       icon: "branch",
       label: "GitHub — проекты и код",
       value: "github.com/Kerarty",
@@ -25,17 +37,11 @@ const DATA = {
       value: "github.com/Kerarty/cv-idatech",
       href: "https://github.com/Kerarty/cv-idatech",
     },
-    {
-      icon: "plane",
-      label: "Telegram",
-      value: "@Kerarty",
-      href: "https://t.me/Kerarty",
-    },
   ],
 
   cta: {
-    text: "Hire me — обсудим вашу вакансию",
-    href: "https://idatech.dev",
+    text: "Hire me — написать на почту",
+    href: "mailto:kukar.yar@gmail.com?subject=Вакансия Game Designer (Casual/Hyper Casual), IDA TECH",
   },
 
   /* --- 💭 Память → Опыт (таймлайн из репозиториев) --- */
