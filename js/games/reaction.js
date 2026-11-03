@@ -9,7 +9,7 @@ Games.register("reaction", {
   icon: "reaction",
   title: "Реакция",
   bg: "linear-gradient(135deg,#fff1d6,#ffe0e0)",
-  note: "Чистый hyper-casual: один тап, ноль обучения. Кривая обратная к скорости — первое попадание гарантированно, дальше азарт. Промах без штрафа: фрустрация убивает путь к контенту быстрее, чем сложность.",
+  note: "Чистый hyper-casual: один тап, ноль обучения. Окно попадания в начале ~230 мс — промахнуть можно только специально; к пятому тапу окно сжимается до ~90 мс, чтобы был азарт. Промах без штрафа: фрустрация убивает путь к контенту быстрее, чем сложность.",
 
   start(body, onWin) {
     const HITS_TO_WIN = 5;
@@ -36,9 +36,9 @@ Games.register("reaction", {
 
     let pos = 0;          // 0..100
     let dir = 1;
-    let speed = 0.26;     // % ширины за мс — очень мягкий старт
+    let speed = 0.14;     // % ширины за мс: окно попадания ~230 мс в начале
     let zoneLeft = 40;
-    let zoneWidth = 28;
+    let zoneWidth = 32;
     let hits = 0;
     let misses = 0;
     let running = false;
@@ -87,10 +87,10 @@ Games.register("reaction", {
         hitsEl.textContent = "попаданий " + hits;
         msg.textContent = ["Есть!", "Чётко!", "В яблочко!", "Реакция топ!", "Последний — хлёсткий!"][hits - 1] || "Есть!";
         if (hits >= HITS_TO_WIN) return finish();
-        // сужаем зону и ускоряемся — прогрессия мягкая: HR не должен фрустрировать
-        zoneWidth = Math.max(14, zoneWidth * 0.88);
+        // сужаем зону и ускоряемся — прогрессия символическая, фрустрации нет
+        zoneWidth = Math.max(20, zoneWidth * 0.93);
         zoneLeft = 12 + Math.random() * (76 - zoneWidth);
-        speed = Math.min(0.55, speed * 1.07);
+        speed = Math.min(0.22, speed * 1.04);
         layoutZone();
       } else {
         misses++;
