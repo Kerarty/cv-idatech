@@ -127,7 +127,7 @@ const Sections = {
 
     const pr = document.createElement("div");
     pr.className = "card";
-    pr.innerHTML = "<h3>" + DATA.ablab.principle + "</h3><p>Двенадцать играбельных резюме за месяц — это и есть этот цикл: каждая студия получила свой прототип, а не исправленную версию чужого.</p>";
+    pr.innerHTML = "<h3>" + DATA.ablab.principle + "</h3><p>Двенадцать игровых прототипов за месяц — этот цикл в чистом виде: двенадцать жанров, двенадцать балансов, ни одной исправленной версии чужого.</p>";
     root.appendChild(pr);
 
     this.replay("ablab", root);
