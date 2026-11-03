@@ -36,9 +36,9 @@ Games.register("reaction", {
 
     let pos = 0;          // 0..100
     let dir = 1;
-    let speed = 0.55;     // % ширины за мс
+    let speed = 0.38;     // % ширины за мс — мягкий старт
     let zoneLeft = 40;
-    let zoneWidth = 22;
+    let zoneWidth = 26;
     let hits = 0;
     let misses = 0;
     let running = false;
@@ -87,10 +87,10 @@ Games.register("reaction", {
         hitsEl.textContent = "попаданий " + hits;
         msg.textContent = ["Есть!", "Чётко!", "В яблочко!", "Реакция топ!", "Последний — хлёсткий!"][hits - 1] || "Есть!";
         if (hits >= HITS_TO_WIN) return finish();
-        // сужаем зону и ускоряемся — прогрессия сложности
-        zoneWidth = Math.max(11, zoneWidth * 0.78);
+        // сужаем зону и ускоряемся — прогрессия мягкая: HR не должен фрустрировать
+        zoneWidth = Math.max(13, zoneWidth * 0.85);
         zoneLeft = 12 + Math.random() * (76 - zoneWidth);
-        speed = Math.min(1.15, speed * 1.16);
+        speed = Math.min(0.78, speed * 1.1);
         layoutZone();
       } else {
         misses++;
