@@ -27,6 +27,9 @@ const App = {
     document.getElementById("game-back").innerHTML = Icons.svg("back", 20);
     document.getElementById("section-back").innerHTML = Icons.svg("back", 20);
     document.getElementById("game-inspect").innerHTML = Icons.svg("info", 19);
+    document.querySelector("#btn-pdf .qb-icon").innerHTML = Icons.svg("doc", 14);
+    document.querySelector("#btn-skip .qb-icon").innerHTML = Icons.svg("ff", 14);
+    document.getElementById("btn-skip").addEventListener("click", () => this.skipAll());
   },
 
   startClock() {
@@ -113,6 +116,18 @@ const App = {
     const game = Games.get(id);
     if (game && !this.progress[id]) this.startGame(id);
     else this.openSection(id);
+  },
+
+  /* «Пропустить всё»: для HR, который не хочет играть, — сразу целое резюме */
+  skipAll() {
+    Games._list.forEach((g) => (this.progress[g.id] = true));
+    this.progress.forecast = true;
+    this.progress.contacts = true;
+    try {
+      localStorage.setItem(this.PROGRESS_KEY, JSON.stringify(this.progress));
+    } catch (e) { /* приватный режим */ }
+    this.refreshBadges();
+    this.openSection("summary");
   },
 
   startGame(id) {

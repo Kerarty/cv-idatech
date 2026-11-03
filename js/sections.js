@@ -201,5 +201,13 @@ const Sections = {
     btn.rel = "noopener";
     btn.textContent = DATA.cta.text;
     root.appendChild(btn);
+
+    const pdf = document.createElement("a");
+    pdf.className = "cta ghost";
+    pdf.href = "docs/CV_Yaroslav.pdf";
+    pdf.target = "_blank";
+    pdf.rel = "noopener";
+    pdf.innerHTML = Icons.svg("doc", 15) + "<span>Скачать PDF-версию досье</span>";
+    root.appendChild(pdf);
   },
 };
